@@ -6,7 +6,7 @@ use App\Repository\LicencieRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: LicencieRepository::class)]
-class Licencie
+class Licencie extends Personne
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

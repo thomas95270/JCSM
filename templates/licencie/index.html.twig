@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Licencie index{% endblock %}
+
+{% block body %}
+    <h1>Licencie index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>CodePostal</th>
+                <th>Adresse</th>
+                <th>Ville</th>
+                <th>DateNaissance</th>
+                <th>Tel</th>
+                <th>Numlicence</th>
+                <th>Cotisation</th>
+                <th>Grade</th>
+                <th>Poids</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for licencie in licencies %}
+            <tr>
+                <td>{{ licencie.id }}</td>
+                <td>{{ licencie.codePostal }}</td>
+                <td>{{ licencie.adresse }}</td>
+                <td>{{ licencie.ville }}</td>
+                <td>{{ licencie.dateNaissance ? licencie.dateNaissance|date('Y-m-d') : '' }}</td>
+                <td>{{ licencie.tel }}</td>
+                <td>{{ licencie.numlicence }}</td>
+                <td>{{ licencie.cotisation }}</td>
+                <td>{{ licencie.grade }}</td>
+                <td>{{ licencie.poids }}</td>
+                <td>
+                    <a href="{{ path('app_licencie_show', {'id': licencie.id}) }}">show</a>
+                    <a href="{{ path('app_licencie_edit', {'id': licencie.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_licencie_new') }}">Create new</a>
+{% endblock %}
