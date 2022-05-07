@@ -8,15 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: LicencieRepository::class)]
 class Licencie extends Personne
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
-    #[ORM\Column(type: 'integer')]
-    private $id;
-
     #[ORM\Column(type: 'string', length: 14, nullable: true)]
     private $numlicence;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'string', length: 15, columnDefinition:"enum('encaisse', 'paye', 'en attente')")]
     private $cotisation;
 
     #[ORM\Column(type: 'string', length: 3, nullable: true)]

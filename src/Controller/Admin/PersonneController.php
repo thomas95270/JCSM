@@ -20,7 +20,7 @@ class PersonneController extends AbstractController
             ->getRepository(Personne::class)
             ->findAll();
 
-        return $this->render('personne/index.html.twig', [
+        return $this->render('back/personne/index.html.twig', [
             'personnes' => $personnes,
         ]);
     }
@@ -39,7 +39,7 @@ class PersonneController extends AbstractController
             return $this->redirectToRoute('app_personne_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('personne/new.html.twig', [
+        return $this->renderForm('back/personne/new.html.twig', [
             'personne' => $personne,
             'form' => $form,
         ]);
@@ -48,7 +48,7 @@ class PersonneController extends AbstractController
     #[Route('/{id}', name: 'app_personne_show', methods: ['GET'])]
     public function show(Personne $personne): Response
     {
-        return $this->render('personne/show.html.twig', [
+        return $this->render('back/personne/show.html.twig', [
             'personne' => $personne,
         ]);
     }
@@ -65,7 +65,7 @@ class PersonneController extends AbstractController
             return $this->redirectToRoute('app_personne_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('personne/edit.html.twig', [
+        return $this->renderForm('back/personne/edit.html.twig', [
             'personne' => $personne,
             'form' => $form,
         ]);

@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Licencie</h1>
 
-    {{ include('licencie/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('back/licencie/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_licencie_index') }}">back to list</a>
 
-    {{ include('licencie/_delete_form.html.twig') }}
+    {{ include('back/licencie/_delete_form.html.twig') }}
 {% endblock %}

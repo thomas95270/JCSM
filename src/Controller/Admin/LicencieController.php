@@ -20,7 +20,7 @@ class LicencieController extends AbstractController
             ->getRepository(Licencie::class)
             ->findAll();
 
-        return $this->render('licencie/index.html.twig', [
+        return $this->render('back/licencie/index.html.twig', [
             'licencies' => $licencies,
         ]);
     }
@@ -39,7 +39,7 @@ class LicencieController extends AbstractController
             return $this->redirectToRoute('app_licencie_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('licencie/new.html.twig', [
+        return $this->renderForm('back/licencie/new.html.twig', [
             'licencie' => $licencie,
             'form' => $form,
         ]);
@@ -48,7 +48,7 @@ class LicencieController extends AbstractController
     #[Route('/{id}', name: 'app_licencie_show', methods: ['GET'])]
     public function show(Licencie $licencie): Response
     {
-        return $this->render('licencie/show.html.twig', [
+        return $this->render('back/licencie/show.html.twig', [
             'licencie' => $licencie,
         ]);
     }
@@ -65,7 +65,7 @@ class LicencieController extends AbstractController
             return $this->redirectToRoute('app_licencie_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('licencie/edit.html.twig', [
+        return $this->renderForm('back/licencie/edit.html.twig', [
             'licencie' => $licencie,
             'form' => $form,
         ]);

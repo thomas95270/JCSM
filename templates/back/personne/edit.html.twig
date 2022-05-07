@@ -5,9 +5,9 @@
 {% block body %}
     <h1>Edit Personne</h1>
 
-    {{ include('personne/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('back/personne/_form.html.twig', {'button_label': 'Update'}) }}
 
     <a href="{{ path('app_personne_index') }}">back to list</a>
 
-    {{ include('personne/_delete_form.html.twig') }}
+    {{ include('back/personne/_delete_form.html.twig') }}
 {% endblock %}

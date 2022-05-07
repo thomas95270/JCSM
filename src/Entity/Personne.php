@@ -18,6 +18,15 @@ class Personne
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
     private $id;
+    
+    #[ORM\Column(type: 'string', length: 50)]
+    private $nom;
+
+    #[ORM\Column(type: 'string', length: 50)]
+    private $prenom;
+
+    #[ORM\Column(type: 'string', length: 180, unique: true)]
+    private $email;
 
     #[ORM\Column(type: 'string', length: 5)]
     private $codePostal;
@@ -39,6 +48,42 @@ class Personne
         return $this->id;
     }
 
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+
+        return $this;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+    
     public function getCodePostal(): ?string
     {
         return $this->codePostal;
@@ -98,4 +143,5 @@ class Personne
 
         return $this;
     }
+
 }

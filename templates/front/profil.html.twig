@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent()}} | Profil{% endblock %}
+
+{% block body %}
+<h1 class="text-center mt-5">Mon profil</h1>
+<h4 class="text-center mt-5">{{app.user.prenom ~ " " ~ app.user.nom }}</h4>
+
+{% endblock %}
