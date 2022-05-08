@@ -5,7 +5,7 @@
 {% block body %}
     <h1>Modifier {{user.nom ~ " " ~ user.prenom}}</h1>
 
-    {{ include('back/user/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('back/user/_form.html.twig', {'button_label': 'Modifier'}) }}
 
     <a class="btn btn-danger text-light" href="{{ path('app_user_index') }}">Retour à la liste</a>
 

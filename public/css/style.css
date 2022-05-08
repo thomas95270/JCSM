@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-th, td {
+table {
     text-align: center;
-}
-body{
-    background-color: aqua;
 }
