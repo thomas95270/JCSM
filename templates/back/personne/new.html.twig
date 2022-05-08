@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Personne{% endblock %}
+{% block title %}{{parent()}} | Créez une Personne{% endblock %}
 
 {% block body %}
-    <h1>Create new Personne</h1>
+    <h1>Enregistrez une nouvelle personne</h1>
 
     {{ include('back/personne/_form.html.twig') }}
 
-    <a href="{{ path('app_personne_index') }}">back to list</a>
+    <a class="btn btn-danger text-light" href="{{ path('app_personne_index') }}">Retour</a>
 {% endblock %}

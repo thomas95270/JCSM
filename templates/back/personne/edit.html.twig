@@ -1,13 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Edit Personne{% endblock %}
+{% block title %}{{parent()}} |  {{personne.nom ~ " " ~ personne.prenom}}{% endblock %}
 
 {% block body %}
-    <h1>Edit Personne</h1>
+    <h1>Modifier une personne</h1>
 
     {{ include('back/personne/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('app_personne_index') }}">back to list</a>
+    <a class="btn btn-danger text-light" href="{{ path('app_personne_index') }}">Retour</a>
 
     {{ include('back/personne/_delete_form.html.twig') }}
 {% endblock %}

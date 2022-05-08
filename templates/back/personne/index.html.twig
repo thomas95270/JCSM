@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Personne index{% endblock %}
+{% block title %}{{parent()}} | Les Personnes{% endblock %}
 
 {% block body %}
-    <h1>Personne index</h1>
+    <h1>Table des Personnes enregistrées</h1>
 
     <table class="table">
         <thead>
@@ -27,17 +27,18 @@
                 <td>{{ personne.dateNaissance ? personne.dateNaissance|date('Y-m-d') : '' }}</td>
                 <td>{{ personne.tel }}</td>
                 <td>
-                    <a href="{{ path('app_personne_show', {'id': personne.id}) }}">show</a>
-                    <a href="{{ path('app_personne_edit', {'id': personne.id}) }}">edit</a>
+                    <a class="btn btn-info text-light" href="{{ path('app_personne_show', {'id': personne.id}) }}">show</a>
+                    <a class="btn btn-info text-light" href="{{ path('app_personne_edit', {'id': personne.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Personne n'est enregistré pour le moment.</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('app_personne_new') }}">Create new</a>
+    <a  class="btn btn-success text-light" href="{{ path('app_personne_new') }}">Enregistrez une nouvelle personne </a>
+    <a  class="btn btn-danger text-light" href="{{ path('accueil') }}">Revenir à l'accueil </a>
 {% endblock %}
