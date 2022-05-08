@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Categorie{% endblock %}
+{% block title %}{{parent()}} | Nouvelle Catégorie{% endblock %}
 
 {% block body %}
-    <h1>Create new Categorie</h1>
+    <h1>Créez une Nouvelle catégorie d'âge</h1>
 
     {{ include('back/categorie/_form.html.twig') }}
 
-    <a href="{{ path('app_categorie_index') }}">back to list</a>
+    <a class="btn btn-success text-light" href="{{ path('app_categorie_index') }}">Retour à la listet</a>
 {% endblock %}
